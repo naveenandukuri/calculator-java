@@ -21,7 +21,7 @@ agent any
   }
     stage("nexus"){
        steps{
-       nexusArtifactUploader artifacts: [[artifactId: '$BUILD_TIMESTAMP', classifier: '', file: 'target/Calculator.jar', type: 'jar']], credentialsId: 'NEXUS_CREDENTIALS', groupId: 'fet1', nexusUrl: '18.118.13.184:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'test1', version: '$BUILD_ID'
+       nexusArtifactUploader artifacts: [[artifactId: '$BUILD_TIMESTAMP', classifier: '', file: 'target/Calculator-1.0-SNAPSHOT.jar', type: 'jar']], credentialsId: 'NEXUS_CREDENTIALS', groupId: 'fet1', nexusUrl: '18.118.13.184:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'test1', version: '$BUILD_ID'
        }
        }
 
