@@ -26,7 +26,7 @@ agent any
        }
        stage("tomcat"){
        steps{
-       deploy adapters: [tomcat9(credentialsId: 'TOMCAT_CRED', path: '', url: 'http://3.15.222.175:8080/')], contextPath: '/manager/text/deploy?path=/qaenv', onFailure: false, war: 'jar'
+       sh 'curl -u tomcat:tomcat@123 -X POST http://http://3.15.222.175:8080/manager/text/deploy?path=/webapp --upload-file target/Calculator-1.0-SNAPSHOT.jar'
        }
        }
 
