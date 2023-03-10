@@ -26,7 +26,7 @@ agent any
        }
        stage("tomcat"){
        steps{
-       deploy adapters: [tomcat9(credentialsId: 'TOMCAT_CRED', path: '', url: 'http://18.218.168.234:8080/')], contextPath: 'qaenv', onFailure: false, war: '**/*.jar'
+       deploy adapters: [tomcat9(credentialsId: 'TOMCAT_CRED', path: '', url: 'http://18.218.168.234:8080/')], contextPath: 'qaenv', onFailure: false, war: '**/*.war'
        }
        }
 
