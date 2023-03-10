@@ -24,6 +24,11 @@ agent any
        nexusArtifactUploader artifacts: [[artifactId: '$BUILD_TIMESTAMP', classifier: '', file: 'target/Calculator-1.0-SNAPSHOT.jar', type: 'JAR']], credentialsId: 'NEXUS_CREDENTIALS', groupId: 'fet1', nexusUrl: '52.14.253.253:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'test1', version: '$BUILD_ID'
        }
        }
+       stage("tomcat"){
+       steps{
+       deploy adapters: [tomcat9(credentialsId: 'TOMCAT_CRED', path: '', url: 'http://18.218.168.234:8080/')], contextPath: 'qaenv', onFailure: false, war: '**/*.jar'
+       }
+       }
 
 }
 }
